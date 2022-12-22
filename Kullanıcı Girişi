@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class KullaniciGirisi {
+    public static void main(String[] args) {
+
+        Scanner inp= new Scanner(System.in);
+        String kullaniciadi,sifre;
+        int yenisifre,secim;
+
+        System.out.print("Kullanıcı adınızı giriniz: ");
+        kullaniciadi=inp.nextLine();
+        System.out.print("Şifrenizi giriniz: ");
+        sifre= inp.nextLine();
+
+        boolean kullanici =kullaniciadi.equals("meri");
+        boolean sifresi =sifre.equals("123");
+
+
+        if(kullanici==true && sifresi==true){
+            System.out.println("Sisteme Giriş Yaptınız.");
+        }
+        else if (kullanici==true && sifresi==false)
+        {
+            System.out.print("Hatalı Giriş Yaptınız! Şifrenizi sıfırlamak istiyorsanız 1'e basınız.\n Çıkış yapmak istiyorsanız 0'a basınız. ");
+            secim=inp.nextInt();
+
+        switch (secim) {
+            case 0:
+                System.out.println("Sistemden çıktınız.");
+            case 1:
+                System.out.print("Oluşturmak istediğiniz yeni şifreyi giriniz:");
+                yenisifre= inp.nextInt();
+                if (yenisifre==123) {
+                    System.out.print("Yeni şifreniz eskisi ile aynı olamaz lütfen geçerli bir şifre giriniz!");
+                }
+                else{
+                    System.out.print("Şifreniz değiştirilmiştir.Yeni şifreniz:" +yenisifre);
+         }
+    }
+            }
+}
+}
